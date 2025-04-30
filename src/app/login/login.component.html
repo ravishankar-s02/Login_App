@@ -1,0 +1,18 @@
+<div class="login-box">
+    <h2>Login</h2>
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+      <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="username" [(ngModel)]="username" required />
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password" [(ngModel)]="password" required />
+      </div>
+      <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+  
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </div>
+  
